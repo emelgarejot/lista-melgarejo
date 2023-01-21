@@ -1,0 +1,33 @@
+<div>
+  <table>
+    <tr>
+      <th>Prefijo</th>
+      <th>Nombre</th>
+      <th>Sexo</th>
+      <th>Edad</th>
+      <th>Status</th>
+    </tr>
+
+    <ng-container *ngFor="let person of persons">
+      <tr>
+        <td>{{ person.sex == "M" ? "Sr" : "Sra" }}</td>
+        <td>
+          {{ person.name }}
+        </td>
+        <td [style.color]="person.sex === 'F' ? 'blue' : 'pink'">
+          {{ person.sex }}
+        </td>
+        <td>
+          {{ person.age }}
+        </td>
+        <td
+          [ngClass]="
+            person.status == 1 ? 'background-verde' : 'background-plomo'
+          "
+        >
+          {{ person.status }}
+        </td>
+      </tr>
+    </ng-container>
+  </table>
+</div>
